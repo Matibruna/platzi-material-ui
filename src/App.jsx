@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Container } from "@mui/material";
 import { Searcher } from "./components/Searcher";
 import { getGitHubUser } from "./services/getGitHubUser";
+import UserCard from "./containers/userCard";
 
 export default function App(){
 
     const [user, setUser] = useState("octocat");
-    const [userState, setUserState] = useState();
+    const [userState, setUserState] = useState('inputUser');
     const [notFound, setNotFound] = useState(false);
     
     const getUser = async (user) => {
@@ -17,16 +18,15 @@ export default function App(){
         }
 
         if(userDataResponse.message === "Not Found"){
-            const octocat = JSON.parse(localStorage.getItem("octocat"));
-            setUserState(octocat);
+            const { octocat } = localStorage;
+            setUserState(JSON.parse(octocat));
             setNotFound(true);
-
         }else{
             setUserState(userDataResponse);
             setNotFound(false);
         }
     }
-    console.log(userState);
+
     useEffect(()=>{
         getUser(user);
     },[user]);
@@ -43,6 +43,7 @@ export default function App(){
                 alignItems: "center",
             }}>
                 <Searcher user={user} setUser={setUser} />
+                <UserCard userState={userState} /> 
             </Container>
     )
 }
