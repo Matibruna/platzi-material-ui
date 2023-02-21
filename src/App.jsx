@@ -35,14 +35,15 @@ export default function App(){
             <Container sx={{
                 background: "linear-gradient(90deg, rgba(33,0,36,0.88) 17%, rgba(24,4,69, 0.87) 38%, rgba(9,9,121,0.85) 60%, rgba(0,112,255,1) 100%)",
                 width: "80vw",
-                height: "500px",
                 borderRadius: "15px",
                 marginTop: "50px",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
+                color: "white"
             }}>
                 <Searcher user={user} setUser={setUser} />
+                {notFound && <span style={{marginTop: "5px", color: "red"}}>User not found!</span>}
                 <UserCard userState={userState} /> 
             </Container>
     )

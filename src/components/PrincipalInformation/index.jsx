@@ -14,13 +14,17 @@ const PrincipalInformation = (props) => {
     } = userState;
     
     return (
-        <>
-            <Stack>
-                <Typography>{name}</Typography>
-                <Typography>{created_at}</Typography>
+        <div>
+            <Stack direction="row" sx={{
+                justifyContent: "space-between"
+            }}>
+                <Typography variant="h4">{name}</Typography>
+                <Typography variant="subtitle2">{created_at}</Typography>
             </Stack>
-            <Typography>{login}</Typography>
-        </>
+            <Stack>
+                <Typography variant="caption">{`@${login}`}</Typography>
+            </Stack>
+        </div>
     )
 }
 
