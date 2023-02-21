@@ -5,13 +5,16 @@ import SearchIcon from "@mui/icons-material/Search";
 export const Searcher = (props) => {
 
     const {
+        user,
         setUser
     } = props;
 
     const [value, setValue] = useState("");
 
     const onSearch = (e) => {
-        setUser(value);
+        if(user !== value){
+            setUser(value);
+        }
     }
 
     return(
