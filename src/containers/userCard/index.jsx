@@ -15,7 +15,7 @@ const UserCard = (props) => {
 
     return (
         <Grid container spacing={2} sx={{
-            marginTop: "20px",
+            my: "70px",
         }}>
             <Grid item xs={3}>
                 <CardMedia
@@ -23,6 +23,7 @@ const UserCard = (props) => {
                     alt="GitHub User"
                     src={avatar_url}
                     sx={{
+                        mt: "40px",
                         borderRadius: "10px",
                         marginLeft: "5px"
                     }}

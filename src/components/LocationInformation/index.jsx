@@ -17,39 +17,46 @@ const LocationInformation = (props) => {
         company
     } = userState;
 
-    return (
-        <>
-            <Grid container spacing={2} sx={{
-                marginTop: "20px"
-            }}>
-                <Grid item xs={6} sx={{
+    const iconSize = {
+        width: "50px",
+        height: "auto"
+    };
 
-                }}>
-                    <Stack direction="row" spacing={2}>
-                        <LocationOnIcon/>
-                        <Typography>{location || "Not Available."}</Typography>
-                    </Stack>
-                </Grid>
-                <Grid item xs={6}>
-                    <Stack direction="row" spacing={2}>
-                        <TwitterIcon/>
-                        <Typography>{twitter_username ? `@${twitter_username}` : "Not Available."}</Typography>
-                    </Stack>
-                </Grid>
-                <Grid item xs={6}>
-                    <Stack direction="row" spacing={2}>
-                        <LanguageIcon/>
-                        <Typography>{blog ? <a href={blog} target="_blank" style={{color:"white"}}>{blog}</a>: "Not Available."}</Typography>
-                    </Stack>
-                </Grid>
-                <Grid item xs={6}>
-                    <Stack direction="row" spacing={2}>
-                        <BusinessIcon/>
-                        <Typography>{company || "Not Available."}</Typography>
-                    </Stack>
-                </Grid>
+    const stack = {
+        display: "flex",
+        justifyContent: "start",
+        alignItems: "center"
+    };
+
+    return (
+        <Grid container spacing={2} sx={{
+            mt: "50px"
+        }}>
+            <Grid item xs={12} md={6}>
+                <Stack direction="row" spacing={2} sx={stack}>
+                    <LocationOnIcon sx={iconSize}/>
+                    <Typography fontSize={20}>{location || "Not Available."}</Typography>
+                </Stack>
             </Grid>
-        </>
+            <Grid item xs={12} md={6}>
+                <Stack direction="row" spacing={2} sx={stack}>
+                    <TwitterIcon sx={iconSize}/>
+                    <Typography fontSize={20}>{twitter_username ? `@${twitter_username}` : "Not Available."}</Typography>
+                </Stack>
+            </Grid>
+            <Grid item xs={12} md={6}>
+                <Stack direction="row" spacing={2} sx={stack}>
+                    <LanguageIcon sx={iconSize} />
+                    <Typography fontSize={20}>{blog ? <a href={blog} target="_blank" style={{color:"white"}}>{blog}</a>: "Not Available."}</Typography>
+                </Stack>
+            </Grid>
+            <Grid item xs={12} md={6}>
+                <Stack direction="row" spacing={2} sx={stack}>
+                    <BusinessIcon sx={iconSize}/>
+                    <Typography fontSize={20}>{company || "Not Available."}</Typography>
+                </Stack>
+            </Grid>
+        </Grid>
     )
 }
 
