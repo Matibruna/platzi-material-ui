@@ -33,6 +33,7 @@ export default function App() {
 
     return(
         <Box sx={{background: "#BBBBBB", width: "99vw", height: "98vh", margin: "auto"}}>
+            <Box sx ={{height: "100px"}}/>
             <Container sx={{
                 background: "linear-gradient(90deg, rgba(33,0,36,0.88) 17%, rgba(24,4,69, 0.87) 38%, rgba(9,9,121,0.85) 60%, rgba(0,112,255,1) 100%)",
                 width: "80vw",
