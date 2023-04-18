@@ -4,7 +4,7 @@ import { Searcher } from "./components/Searcher";
 import { getGitHubUser } from "./services/getGitHubUser";
 import UserCard from "./containers/userCard";
 
-export default function App(){
+export default const App = () => {
 
     const [user, setUser] = useState("octocat");
     const [userState, setUserState] = useState('inputUser');
