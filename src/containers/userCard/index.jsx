@@ -1,13 +1,9 @@
 import React from 'react'
-import Description from '../../components/description';
 import { CardMedia, Grid, Stack } from '@mui/material';
+import Description from '../../components/description';
 import PrincipalInformation from '../../components/PrincipalInformation';
 
-const UserCard = (props) => {
-
-    const {
-        userState
-    } = props;
+const UserCard = ({userState}) => {
 
     const {
         avatar_url
