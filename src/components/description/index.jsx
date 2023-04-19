@@ -13,13 +13,13 @@ const Description = (props) => {
     } = userState;
 
     return (
-        <>
+        <React.Fragment>
             <Stack>
-                <Typography variant="body1">{bio || "Lorem Ipsum."}</Typography>
+                <Typography variant="body1" sx={{marginLeft: "10%"}}>{bio || "Lorem Ipsum."}</Typography>
             </Stack>
             <PaperInformation userState={userState} />
             <LocationInformation userState={userState} />
-        </>
+        </React.Fragment>
     )
 }
 

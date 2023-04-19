@@ -30,7 +30,8 @@ const LocationInformation = (props) => {
 
     return (
         <Grid container spacing={2} sx={{
-            mt: "50px"
+            mt: "50px",
+            mx: "auto"
         }}>
             <Grid item xs={12} md={6}>
                 <Stack direction="row" spacing={2} sx={stack}>

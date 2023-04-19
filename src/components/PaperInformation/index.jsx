@@ -13,25 +13,25 @@ const PaperInformation = (props) => {
     } = userState;
 
     return (
-        <Paper elevation={3} >
-            <Stack spacing={3} direction="row" sx={{
+        <Paper elevation={12} sx={{minWidth: "200px", width: "90%", mx: "auto !important"}}>
+            <Stack direction="row" sx={{
                 justifyContent: "space-evenly",
-                margin: "20px"
+                padding: "15px"
             }}>
-                <Grid container sx={{textAlign: "center"}}>
-                    <Grid item xs={12} md={5} lg={4}>
+                <Grid spacing={6} container columns={10} sx={{textAlign: "center"}}>
+                    <Grid item xs={10} lg={4}>
                         <Stack>
                             <Typography variant="h5" sx={{fontWeight: "bold"}}>Repositorios:</Typography>
                             <Typography variant="h6">{public_repos}</Typography>
                         </Stack>
                     </Grid>
-                    <Grid item xs={12} md={4}>
+                    <Grid item xs={10} lg={3}>
                         <Stack>
                             <Typography variant="h5" sx={{fontWeight: "bold"}}>Followers:</Typography>
                             <Typography variant="h6">{followers}</Typography>
                         </Stack>
                     </Grid>
-                    <Grid item xs={12} md={3} lg={4}>
+                    <Grid item xs={10} lg={3}>
                         <Stack>
                             <Typography variant="h5" sx={{fontWeight: "bold"}}>Following:</Typography>
                             <Typography variant="h6">{following}</Typography>

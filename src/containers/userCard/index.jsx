@@ -10,29 +10,32 @@ const UserCard = ({userState}) => {
     } = userState;
 
     return (
-        <Grid container spacing={2} sx={{
-            my: "70px",
-        }}>
-            <Grid item xs={3}>
+        <Grid container spacing={2}>
+
+            <Grid item xs={12} sx={{height: "50px"}}/>
+
+            <Grid item xs={12} md={6} sx={{my: "50px"}}>
                 <CardMedia
                     component="img"
                     alt="GitHub User"
                     src={avatar_url}
                     sx={{
-                        mt: "40px",
+                        maxWidth: "min(400px, 90vw)",
                         borderRadius: "10px",
-                        marginLeft: "5px"
+                        margin: "auto"
                     }}
                 />
             </Grid>
-            <Grid item xs={9}>
-                <Stack direction="column" spacing={1} sx={{
-                    margin: "30px",
-                }}>
+
+            <Grid item xs={12} md={6} sx={{my: "50px"}}>
+                <Stack spacing={1} direction="column">
                     <PrincipalInformation userState={userState} />
                     <Description userState={userState} />
                 </Stack>
             </Grid>
+            
+            <Grid item xs={12} sx={{height: "50px"}}/>
+
         </Grid>
     )
 }

@@ -32,22 +32,23 @@ export default function App() {
     },[user]);
 
     return(
-        <Box sx={{background: "#BBBBBB", width: "99vw", height: "98vh", margin: "auto"}}>
+        <Container disableGutters maxWidth={false} sx={{background: "#BBBBBB", maxWidth: "100vw", minHeight: "98vh"}}>
             <Box sx ={{height: "100px"}}/>
-            <Container sx={{
+            <Box sx={{
                 background: "linear-gradient(90deg, rgba(33,0,36,0.88) 17%, rgba(24,4,69, 0.87) 38%, rgba(9,9,121,0.85) 60%, rgba(0,112,255,1) 100%)",
-                width: "80vw",
                 borderRadius: "15px",
+                margin: "auto",
                 paddingTop: "50px",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                color: "white"
+                color: "white",
+                maxWidth: "1200px"
             }}>
                 <Searcher user={user} setUser={setUser} />
                 {notFound && <span style={{marginTop: "5px", color: "red"}}>User not found!</span>}
                 <UserCard userState={userState} /> 
-            </Container>
-        </Box>
+            </Box>
+        </Container>
     )
 }

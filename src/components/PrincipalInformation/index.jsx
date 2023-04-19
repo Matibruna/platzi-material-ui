@@ -1,4 +1,4 @@
-import { Stack, Typography } from '@mui/material';
+import { Stack, Typography, Grid } from '@mui/material';
 import React from 'react'
 
 const PrincipalInformation = (props) => {
@@ -16,17 +16,19 @@ const PrincipalInformation = (props) => {
     const date = new Date(created_at);
 
     return (
-        <div>
-            <Stack direction="row" sx={{
-                justifyContent: "space-between"
-            }}>
-                <Typography variant="h4">{name}</Typography>
-                <Typography variant="subtitle2">{date.toDateString()}</Typography>
-            </Stack>
+        <Grid sx={{marginLeft: "10%"}}>
+            <Typography align="start" variant="h4" sx={{fontWeight: "bold"}}>
+                {name}
+            </Typography>
+
+            <Typography variant="subtitle2" sx={{fontWeight: "bold"}}>
+                {date.toDateString()}
+            </Typography>
+                
             <Stack>
                 <Typography variant="caption">{`@${login}`}</Typography>
             </Stack>
-        </div>
+        </Grid>
     )
 }
 
